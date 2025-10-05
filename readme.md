@@ -1,6 +1,39 @@
-# SkyStack
+# Cloud-Based Processing and Streaming of INSAT Satellite Data using COGs
 
-SkyStack is a comprehensive solution for processing satellite data, featuring two main architectural components: a Node.js-based service for converting HDF5 files to COG format, and a more complex, on-the-fly processing pipeline orchestrated with AWS services using Docker-compose and LocalStack.
+**Team Name:** SkyStack
+
+**Team Members:**
+* [Team Member 1 Rasika Mhaske]
+* [Team Member 2 Vivek Bendre]
+* [Team Member 3 Kashish Dange]
+* [Team Member 4 Mrunal Gorwadkar]
+
+**Project Name:** SkyStack
+
+**Project Abstract:**
+Accessing and processing large-scale INSAT satellite data using traditional methods is 
+inefficient for timely meteorological analysis. This project introduces a high-performance, 
+cloud-native architecture to overcome these limitations. By converting legacy HDF5 data into 
+Cloud-Optimized GeoTIFFs (COGs), the system enables selective data streaming and on-the-fly 
+processing through a serverless backend. Complex analysis tasks are managed by a Directed 
+Acyclic Graph (DAG) model and accelerated by an in-memory cache to reduce data retrieval 
+latency. The result is an interactive web platform that provides meteorologists with powerful tools 
+for the near real-time visualization and manipulation of satellite imagery, demonstrating a 
+significant improvement in usability and responsiveness for critical environmental analysis.
+
+**Tech Stack:**
+* **Backend:** Node.js, Express, Python
+* **Frontend:** HTML, CSS, JavaScript
+* **Containerization:** Docker
+* **Orchestration:** Docker-compose
+* **AWS Services (LocalStack):**
+    * S3
+    * DynamoDB
+    * Step Functions
+    * Lambda
+
+**Satellite Data Used:**
+* ISRO INSAT LEVEL 1 DATA Link -: [Click Here](https://vedas.sac.gov.in/static/pdf/SIH_2024/SIH1738_cog.tar)
 
 ## Table of Contents
 
@@ -13,7 +46,6 @@ SkyStack is a comprehensive solution for processing satellite data, featuring tw
     - [First Architecture (HDF5 to COG Converter)](#first-architecture-hdf5-to-cog-converter)
     - [On-the-Fly Processor](#on-the-fly-processor)
   - [Project Structure](#project-structure)
-  - [Built With](#built-with)
   - [Contributing](#contributing)
   - [License](#license)
   - [Contact](#contact)
@@ -111,15 +143,3 @@ SkyStack/
     ├── readme.md
     └── setup.Dockerfile
 ```
-
-## Built With
-
-* **Backend:** Node.js, Express, Python
-* **Containerization:** Docker
-* **Orchestration:** Docker-compose
-* **AWS Services (LocalStack):**
-    * S3
-    * DynamoDB
-    * Step Functions
-    * Lambda
-* **Frontend:** HTML, CSS, JavaScript
