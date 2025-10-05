@@ -3,12 +3,12 @@
 **Team Name:** SkyStack
 
 **Team Members:**
-* [Team Member 1 Rasika Mhaske]
-* [Team Member 2 Vivek Bendre]
-* [Team Member 3 Kashish Dange]
-* [Team Member 4 Mrunal Gorwadkar]
+* Team Member 1 :- Rasika Mhaske
+* Team Member 2 :- Vivek Bendre
+* Team Member 3 :- Kashish Dange
+* Team Member 4 :- Mrunal Gorwadkar
 
-**Project Name:** SkyStack
+**Project Name:** Cloud-Based Processing and Streaming of INSAT Satellite Data using COGs
 
 **Project Abstract:**
 Accessing and processing large-scale INSAT satellite data using traditional methods is 
@@ -23,7 +23,7 @@ significant improvement in usability and responsiveness for critical environment
 
 **Tech Stack:**
 * **Backend:** Node.js, Express, Python
-* **Frontend:** HTML, CSS, JavaScript
+* **Frontend:** React.js, JavaScript, Open Layers
 * **Containerization:** Docker
 * **Orchestration:** Docker-compose
 * **AWS Services (LocalStack):**
@@ -46,10 +46,6 @@ significant improvement in usability and responsiveness for critical environment
     - [First Architecture (HDF5 to COG Converter)](#first-architecture-hdf5-to-cog-converter)
     - [On-the-Fly Processor](#on-the-fly-processor)
   - [Project Structure](#project-structure)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
-  - [Acknowledgements](#acknowledgements)
 
 ## Getting Started
 
