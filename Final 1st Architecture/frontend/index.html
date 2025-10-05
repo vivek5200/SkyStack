@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HDF5 to COG Converter</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/geotiff@2.0.7/dist-browser/geotiff.js"></script>
+</head>
+<body>
+    <div id="controls">
+        <h1>Upload HDF5 File</h1>
+        <form id="uploadForm">
+            <label for="hdf5file">Choose an HDF5 file:</label>
+            <input type="file" id="hdf5file" name="hdf5file" accept=".h5,.hdf5" required multiple>
+            <span id="file-name">No file chosen</span>
+            <button type="submit" id="convertBtn" disabled>Convert</button>
+        </form>
+        <div id="status">Select a file to begin.</div>
+        <div id="band-selector-container"></div>
+    </div>
+    <div id="viewer">
+        <div id="viewer-controls">
+            <label for="color-map-select">Color Map:</label>
+            <select id="color-map-select">
+                <option value="grayscale">Grayscale</option>
+                <option value="viridis">Viridis</option>
+                <option value="inferno">Inferno</option>
+            </select>
+        </div>
+        <canvas id="cog-viewer"></canvas>
+        <div id="cog-label"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

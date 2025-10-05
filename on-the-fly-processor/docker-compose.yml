@@ -1,0 +1,56 @@
+version: '3.8'
+services:
+  # The FastAPI Application
+  api:
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    ports:
+      - "8000:80"
+    environment:
+      - AWS_ENDPOINT_URL=http://localstack:4566
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+    # API now waits for localstack to be healthy, ensuring setup is complete.
+    depends_on:
+      localstack:
+        condition: service_healthy
+
+  # AWS Services Simulator
+  localstack:
+    image: localstack/localstack:3.4
+    ports:
+      - "4566:4566"
+      - "4510-4559:4510-4559"
+    environment:
+      - LOCALSTACK_HOST=localhost.localstack.cloud
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "localstack_data:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4566/_localstack/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # The dedicated setup service that runs once and then idles.
+  aws-setup:
+    build:
+      context: .
+      dockerfile: setup.Dockerfile
+    environment:
+      - AWS_ENDPOINT_URL=http://localstack:4566
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+    # This volume allows you to upload files from your local machine for testing.
+    volumes:
+      - C:\Users\vivek\Downloads:/data:ro
+    depends_on:
+      localstack:
+        condition: service_healthy
+
+volumes:
+  localstack_data:

@@ -1,0 +1,14 @@
+{
+  "name": "hdf-cog-webapp",
+  "version": "1.0.0",
+  "description": "Web interface for HDF5 to COG conversion",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.0.0-beta.1",
+    "multer": "^2.0.0-rc.1"
+  }
+}

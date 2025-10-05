@@ -1,0 +1,211 @@
+/* style.css */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+#controls {
+    width: 380px;
+    padding: 24px;
+    box-shadow: none; /* Removed shadow for a flatter look */
+    overflow-y: auto;
+    border-right: 1px solid #e9ecef; /* Subtler border */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    color: #212529;
+    border-bottom: 1px solid #e9ecef; /* Header underline */
+}
+
+#uploadForm {
+    margin-bottom: 25px;
+}
+
+/* --- New Styles for Labels --- */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- New Styles for Form Elements --- */
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    background-color: #f1f3f5;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+input[type="file"]:hover {
+    background-color: #e9ecef;
+}
+
+#file-name {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #6c757d;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 4px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+button[type="submit"]:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+}
+
+button[type="submit"]:disabled:hover {
+    background-color: #adb5bd;
+}
+
+#status {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 5px;
+    font-style: normal;
+    text-align: center;
+}
+
+/* --- New Band Selector Styles --- */
+#band-selector-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+#band-selector-container label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#band-selector-container select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    background-color: #f1f3f5;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-appearance: none; /* Removes default browser styling */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+/* --- Viewer and other styles remain the same --- */
+#viewer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    position: relative;
+    overflow: hidden;
+}
+
+#cog-viewer {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#cog-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+}
+
+#viewer-controls {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+#viewer-controls label {
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+#viewer-controls select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
