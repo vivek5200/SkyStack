@@ -1,0 +1,33 @@
+/* skystack/src/index.css */
+@import "tailwindcss";
+
+/* * Custom Scrollbar Styling for Dark Theme 
+ * Applies to WebKit browsers (Chrome, Safari, Edge) 
+ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; /* This ensures the horizontal scrollbar is also styled */
+}
+
+/* Track background */
+::-webkit-scrollbar-track {
+  background: #1f2937; /* Equivalent to gray-800 */
+  border-radius: 10px;
+}
+
+/* Handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #4b5563; /* Equivalent to gray-600 */
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* Equivalent to gray-500 */
+}
+
+/* Fallback/Standard styling for Firefox */
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: #4b5563 #1f2937; /* thumb color | track color */
+}
