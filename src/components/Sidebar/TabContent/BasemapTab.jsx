@@ -4,7 +4,6 @@ const BasemapTab = ({ currentBasemap, changeBasemap, basemaps }) => {
   const basemapConfig = [
     // Main basemaps
     { id: 'osm', name: 'Street Map', description: 'OpenStreetMap', thumbnail: 'https://tile.openstreetmap.org/5/16/10.png' },
-    { id: 'cartodb', name: 'Voyager', description: 'CartoDB Voyager', thumbnail: 'https://cartocdn-gusc.global.ssl.fastly.net//ramirocartodb/api/v1/map/named/tpl_756aec63_3adb_48c6_9f6e_2c0e43a53f22/0/5/16/10.png' },
     { id: 'satellite', name: 'Satellite Imagery', description: 'Satellite Imagery', thumbnail: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/5/10/16' },
     { id: 'googleSatellite', name: 'Satellite', description: 'Google Satellite', thumbnail: 'https://mt1.google.com/vt/lyrs=s&x=16&y=10&z=5' },
     { id: 'googleHybrid', name: 'Satellite with Labels', description: 'Google Hybrid', thumbnail: 'https://mt1.google.com/vt/lyrs=y&x=16&y=10&z=5' },

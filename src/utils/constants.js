@@ -7,13 +7,6 @@ export const basemaps = {
     description: 'OpenStreetMap',
     source: new OSM()
   },
-  cartodb: {
-    name: 'Voyager',
-    description: 'CartoDB Voyager',
-    source: new XYZ({
-      url: 'https://{a-c}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-    })
-  },
   satellite: {
     name: 'Satellite Imagery',
     description: 'Satellite Imagery',
